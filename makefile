@@ -1,6 +1,9 @@
 MAKE=make
 MKDIR=mkdir -p
 PYTH=python
+PANDOC=pandoc
+
+PANDOC_OPTS=-f markdown_github -t latex
 
 PYMARKTEX=pymarktex/pymarktex.py
 
@@ -25,7 +28,7 @@ $(MD_DIR)/%.md:
  
 $(TEX_DIR)/%.tex: $(MD_DIR)/%.md
 	$(MKDIR) $(TEX_DIR)
-	$(PYTH) $(PYMARKTEX) $< > $@
+	$(PANDOC) $(PANDOC_OPTS) -o $@ $<
 
 
 md: $(BUILD_DIR)/keys.txt
@@ -34,7 +37,7 @@ md: $(BUILD_DIR)/keys.txt
 	done
 
 tex: $(BUILD_DIR)/keys.txt
-	for key in $(addsuffix .d, $(shell cat $<)); do\
+	for key in $(addsuffix .tex, $(shell cat $<)); do\
 		make $(TEX_DIR)/$$key;\
 	done
 
