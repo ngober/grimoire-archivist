@@ -11,4 +11,4 @@ if not os.path.exists(build_dir):
 	os.makedirs(build_dir)
 
 for p in grim:
-	print p.id
+	print p.id 
