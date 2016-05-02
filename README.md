@@ -9,13 +9,13 @@ Grimoire Archivist requires Python 2.7, Pandoc, and a Latex distribution contain
  * tools
  * ulem
 
- All relevant packages can be installed with one command:
+All relevant packages can be installed with one command:
 
-     apt-get install python2.7 pandoc texlive
+    apt-get install python2.7 pandoc texlive
 
 
 # Running
-Grimoire Archivist can be run by simply typing `make`. However, there are also other make targets:
+Grimoire Archivist can be run by simply calling `make`. However, there are also other make targets:
 
  * `make keys`: Get the reddit short codes for grimoire pages
  * `make md`: Pull the markdown content from all of the grimoire pages
